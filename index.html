@@ -55,6 +55,7 @@
       max-width: 100%;
       height: auto;
       margin-bottom: 45px;
+      cursor: pointer;
     }
 
     .section-title {
@@ -112,11 +113,31 @@
 
     .links a {
       display: block;
+    }
+
+    /* ① 原始状态：蓝色 */
+    .links a:link {
       color: #0000ee;
     }
 
-    .links a.website {
-      color: #800080;
+    /* ② 点击过：绿色 */
+    .links a:visited {
+      color: #008000;
+    }
+
+    /* ③ 鼠标放上去：橙色 */
+    .links a:hover {
+      color: #ff6600;
+    }
+
+    /* ④ 刚按下：红色 */
+    .links a:active {
+      color: #ff0000;
+    }
+
+    /* 长按：紫色 */
+    .links a.long-press {
+      color: #800080 !important;
     }
 
     .contact {
@@ -171,24 +192,28 @@
     <div class="date">Saturday, October 10, 2026</div>
     <div class="time">7:30 PM – 10:30 PM</div>
 
-    <img
-      class="event-image"
-      src="jazz-night.jpg"
-      alt="Jazz Night 2026 poster"
-    >
+    <!-- 图片点击跳转 -->
+    <a href="https://example.com">
+      <img
+        class="event-image"
+        src="jazz-night.jpg"
+        alt="Jazz Night 2026 poster"
+      >
+    </a>
 
     <h2 class="section-title">About the Event</h2>
 
     <div class="content">
       <p>
         Join us for an evening of
-        <strong style="color:#8f0808;">live jazz, dancing, and good music.</strong>
+        <strong style="color:#8f0808;">
+          live jazz, dancing, and good music.
+        </strong>
       </p>
 
       <p class="price">
         Ticket:
         <span class="old-price">$30</span><br>
-
         <span class="special-price">Special Price: $20</span>
       </p>
 
@@ -202,7 +227,7 @@
     <h2 class="section-title">More Information</h2>
 
     <div class="links">
-      <a class="website" href="#">Visit our website</a>
+      <a href="https://example.com">Visit our website</a>
       <a href="mailto:jazznight@example.com">Email us</a>
       <a href="tel:+886000000000">Call us</a>
     </div>
@@ -218,5 +243,45 @@
     </div>
 
   </main>
+
+  <script>
+    const links = document.querySelectorAll(".links a");
+
+    links.forEach(link => {
+      let longPressTimer;
+
+      // 刚按下 → :active 自动变成红色
+      link.addEventListener("mousedown", () => {
+        longPressTimer = setTimeout(() => {
+          // 长按 500ms 后 → 紫色
+          link.classList.add("long-press");
+        }, 500);
+      });
+
+      // 松开 → 恢复正常状态
+      link.addEventListener("mouseup", () => {
+        clearTimeout(longPressTimer);
+        link.classList.remove("long-press");
+      });
+
+      link.addEventListener("mouseleave", () => {
+        clearTimeout(longPressTimer);
+        link.classList.remove("long-press");
+      });
+
+      // 手机触摸
+      link.addEventListener("touchstart", () => {
+        longPressTimer = setTimeout(() => {
+          link.classList.add("long-press");
+        }, 500);
+      });
+
+      link.addEventListener("touchend", () => {
+        clearTimeout(longPressTimer);
+        link.classList.remove("long-press");
+      });
+    });
+  </script>
+
 </body>
 </html>
