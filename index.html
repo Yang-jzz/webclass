@@ -1,64 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Favorite Planet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jazz Night 2026</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f8f3ed;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #252525;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 34px;
+    }
+
+    h1 {
+      margin: 0 0 30px;
+      color: #8f0808;
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 23px;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
+    .date {
+      color: #8f0808;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .time {
+      font-size: 21px;
+      margin-bottom: 28px;
+    }
+
+    .event-image {
+      display: block;
+      width: 380px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 45px;
+    }
+
+    .section-title {
+      margin: 0 0 28px;
+      padding: 4px 0;
+      background: linear-gradient(
+        to bottom,
+        #ead7b9,
+        #f0dfc4
+      );
+      color: #8f0808;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .content {
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .content p {
+      margin: 0 0 20px;
+    }
+
+    .price {
+      margin-top: 5px;
+    }
+
+    .old-price {
+      color: #777;
+      text-decoration: line-through;
+    }
+
+    .special-price {
+      color: #8f0808;
+      font-weight: bold;
+    }
+
+    .old-time {
+      color: #e00000;
+      text-decoration: line-through;
+    }
+
+    .new-time {
+      color: #188a2d;
+      text-decoration: underline;
+    }
+
+    .links {
+      margin-top: 22px;
+      margin-bottom: 45px;
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .links a {
+      display: block;
+      color: #0000ee;
+    }
+
+    .links a.website {
+      color: #800080;
+    }
+
+    .contact {
+      background: #fff4c7;
+      padding: 12px 0 10px;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .contact a {
+      color: #0000ee;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .subtitle,
+      .date,
+      .time,
+      .content,
+      .links,
+      .contact {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .event-image {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="container">
 
-    <h1>My Favorite Planet</h1>
+    <h1>JAZZ NIGHT 2026</h1>
 
-    <p><b>Mars</b></p>
+    <div class="subtitle">Live Music &amp; Dance</div>
 
-    <p>Mars is the fourth planet from the Sun.</p>
+    <div class="date">Saturday, October 10, 2026</div>
+    <div class="time">7:30 PM – 10:30 PM</div>
 
-    <p>
-        I think Mars is <i>one of the most interesting planets in our solar system.</i>
-    </p>
+    <img
+      class="event-image"
+      src="jazz-night.jpg"
+      alt="Jazz Night 2026 poster"
+    >
 
-    <hr>
+    <h2 class="section-title">About the Event</h2>
 
-    <p><b>Some Facts</b></p>
+    <div class="content">
+      <p>
+        Join us for an evening of
+        <strong style="color:#8f0808;">live jazz, dancing, and good music.</strong>
+      </p>
 
-    <p>
-        Mars has 2 moons:<br>
-        Phobos<br>
-        Deimos
-    </p>
+      <p class="price">
+        Ticket:
+        <span class="old-price">$30</span><br>
 
-    <p>
-        The average distance from Mars to the Sun is about
-        2.28 x 10<sup>8</sup> km.
-    </p>
+        <span class="special-price">Special Price: $20</span>
+      </p>
 
-    <p>
-        Water is H<sub>2</sub>O.
-    </p>
+      <p>
+        We originally planned to start at
+        <span class="old-time">8:00 PM</span>
+        <span class="new-time">7:30 PM</span>.
+      </p>
+    </div>
 
-    <hr>
+    <h2 class="section-title">More Information</h2>
 
-    <p><b>Why I Like Mars</b></p>
+    <div class="links">
+      <a class="website" href="#">Visit our website</a>
+      <a href="mailto:jazznight@example.com">Email us</a>
+      <a href="tel:+886000000000">Call us</a>
+    </div>
 
-    <p>
-        Mars is cold and dry,<br>
-        but scientists are still exploring it.
-    </p>
+    <h2 class="section-title">Contact</h2>
 
-    <p><b>Maybe humans will visit Mars one day!</b></p>
+    <div class="contact">
+      Jazz Night Taipei<br>
+      123 Music Street, Taipei<br>
+      <a href="mailto:jazznight@example.com">
+        jazznight@example.com
+      </a>
+    </div>
 
-    <hr>
-
-    <p><b>Keep Exploring</b></p>
-
-    <p><b>Remember:</b> science begins with curiosity.</p>
-
-    <p>
-        I <i><font color="purple">really</font></i> want to see humans explore Mars in the future.
-    </p>
-
-    <p>
-        <u>NASA</u> has sent many missions to study Mars.
-    </p>
-
+  </main>
 </body>
 </html>
