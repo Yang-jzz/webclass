@@ -1,287 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jazz Night 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <title>Starlight Music Festival</title>
 
-    body {
-      margin: 0;
-      background: #f8f3ed;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #252525;
-    }
+    <style>
+        /* ---------- General ---------- */
 
-    .container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 28px 34px;
-    }
+        body {
+            margin: 0;
+            background-color: #111827;
+            color: #f9fafb;
+            font-family: Georgia, serif;
+        }
 
-    h1 {
-      margin: 0 0 30px;
-      color: #8f0808;
-      font-size: 42px;
-      font-weight: 700;
-    }
+        /* ---------- Header ---------- */
 
-    .subtitle {
-      font-size: 23px;
-      font-style: italic;
-      margin-bottom: 25px;
-    }
+        header {
+            background-color: #6d28d9;
+            text-align: center;
+            padding: 25px;
+            margin: 6px;
+        }
 
-    .date {
-      color: #8f0808;
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
 
-    .time {
-      font-size: 21px;
-      margin-bottom: 28px;
-    }
+        header p {
+            margin: 8px;
+            font-size: 14px;
+        }
 
-    .event-image {
-      display: block;
-      width: 380px;
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 45px;
-      cursor: pointer;
-    }
+        /* ---------- Event Image ---------- */
 
-    .section-title {
-      margin: 0 0 28px;
-      padding: 4px 0;
-      background: linear-gradient(
-        to bottom,
-        #ead7b9,
-        #f0dfc4
-      );
-      color: #8f0808;
-      font-size: 32px;
-      font-weight: bold;
-    }
+        .event-image {
+            text-align: center;
+            margin: 12px auto 18px;
+        }
 
-    .content {
-      font-size: 21px;
-      line-height: 1.5;
-    }
+        .event-image img {
+            width: 480px;
+            max-width: 90%;
+            display: block;
+            margin: auto;
+        }
 
-    .content p {
-      margin: 0 0 20px;
-    }
+        .event-image p {
+            font-size: 11px;
+        }
 
-    .price {
-      margin-top: 5px;
-    }
+        /* ---------- 2 x 2 Layout ---------- */
 
-    .old-price {
-      color: #777;
-      text-decoration: line-through;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 6px;
+        }
 
-    .special-price {
-      color: #8f0808;
-      font-weight: bold;
-    }
+        .section {
+            padding: 20px;
+            min-height: 105px;
+            box-sizing: border-box;
+        }
 
-    .old-time {
-      color: #e00000;
-      text-decoration: line-through;
-    }
+        .about {
+            background-color: #fef3c7;
+            color: #312e81;
+        }
 
-    .new-time {
-      color: #188a2d;
-      text-decoration: underline;
-    }
+        .highlights {
+            background-color: #374151;
+            color: #ffffff;
+        }
 
-    .links {
-      margin-top: 22px;
-      margin-bottom: 45px;
-      font-size: 21px;
-      line-height: 1.5;
-    }
+        .program {
+            background-color: #fde68a;
+            color: #312e81;
+        }
 
-    .links a {
-      display: block;
-    }
+        .tickets {
+            background-color: #1f2937;
+            color: #ffffff;
+        }
 
-    /* ① 原始状态：蓝色 */
-    .links a:link {
-      color: #0000ee;
-    }
+        .section h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
 
-    /* ② 点击过：绿色 */
-    .links a:visited {
-      color: #008000;
-    }
+        .section p {
+            font-size: 12px;
+            line-height: 1.5;
+        }
 
-    /* ③ 鼠标放上去：橙色 */
-    .links a:hover {
-      color: #ff6600;
-    }
+        .section ul {
+            font-size: 12px;
+            line-height: 1.7;
+        }
 
-    /* ④ 刚按下：红色 */
-    .links a:active {
-      color: #ff0000;
-    }
+        /* ---------- Links ---------- */
 
-    /* 长按：紫色 */
-    .links a.long-press {
-      color: #800080 !important;
-    }
+        a:link {
+            color: #c4b5fd;
+        }
 
-    .contact {
-      background: #fff4c7;
-      padding: 12px 0 10px;
-      font-size: 20px;
-      font-style: italic;
-      line-height: 1.35;
-    }
+        a:visited {
+            color: #f9a8d4;
+        }
 
-    .contact a {
-      color: #0000ee;
-      font-weight: bold;
-    }
+        a:hover {
+            color: #facc15;
+        }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
+        a:active {
+            color: #ef4444;
+        }
 
-      h1 {
-        font-size: 32px;
-      }
+        /* ---------- Contact ---------- */
 
-      .subtitle,
-      .date,
-      .time,
-      .content,
-      .links,
-      .contact {
-        font-size: 18px;
-      }
+        footer {
+            background-color: #6d28d9;
+            text-align: center;
+            padding: 18px;
+            margin: 0 6px 6px;
+        }
 
-      .section-title {
-        font-size: 26px;
-      }
+        footer h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
 
-      .event-image {
-        width: 100%;
-      }
-    }
-  </style>
+        footer p {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        /* ---------- Mobile ---------- */
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
+
 <body>
-  <main class="container">
 
-    <h1>JAZZ NIGHT 2026</h1>
+    <!-- Header -->
+    <header>
+        <h1>STARLIGHT MUSIC FESTIVAL</h1>
 
-    <div class="subtitle">Live Music &amp; Dance</div>
+        <p>
+            <em>An Evening of Music, Lights &amp; Memories</em>
+        </p>
 
-    <div class="date">Saturday, October 10, 2026</div>
-    <div class="time">7:30 PM – 10:30 PM</div>
+        <p>
+            <strong>Saturday, October 17, 2026</strong>
+            <br>
+            7:30 PM – 11:00 PM
+            <br>
+            Taipei Riverside Park
+        </p>
+    </header>
 
-    <!-- 图片点击跳转 -->
-    <a href="https://example.com">
-      <img
-        class="event-image"
-        src="jazz-night.jpg"
-        alt="Jazz Night 2026 poster"
-      >
-    </a>
 
-    <h2 class="section-title">About the Event</h2>
+    <!-- Large Event Image -->
+    <div class="event-image">
 
-    <div class="content">
-      <p>
-        Join us for an evening of
-        <strong style="color:#8f0808;">
-          live jazz, dancing, and good music.
-        </strong>
-      </p>
+        <a href="https://www.taipei.gov.tw/" target="_blank">
+            <img
+                src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a"
+                alt="Live music festival at night">
+        </a>
 
-      <p class="price">
-        Ticket:
-        <span class="old-price">$30</span><br>
-        <span class="special-price">Special Price: $20</span>
-      </p>
+        <p>
+            <em>Click the image to visit the event website.</em>
+        </p>
 
-      <p>
-        We originally planned to start at
-        <span class="old-time">8:00 PM</span>
-        <span class="new-time">7:30 PM</span>.
-      </p>
     </div>
 
-    <h2 class="section-title">More Information</h2>
 
-    <div class="links">
-      <a href="https://example.com">Visit our website</a>
-      <a href="mailto:jazznight@example.com">Email us</a>
-      <a href="tel:+886000000000">Call us</a>
+    <!-- 2 x 2 Layout -->
+    <div class="grid">
+
+        <!-- About the Night -->
+        <div class="section about">
+
+            <h2>About the Night</h2>
+
+            <p>
+                Welcome to <strong>Starlight Music Festival</strong>,
+                an exciting outdoor music event featuring live performances,
+                colorful lights, and an unforgettable atmosphere.
+            </p>
+
+            <p>
+                Enjoy great music, meet new people, and spend the evening
+                dancing under the stars.
+            </p>
+
+        </div>
+
+
+        <!-- Night Highlights -->
+        <div class="section highlights">
+
+            <h2>Night Highlights</h2>
+
+            <ul>
+                <li>
+                    <strong>LIVE BAND</strong> —
+                    Starlight Avenue
+                </li>
+
+                <li>
+                    <strong>FOOD &amp; DRINKS</strong> —
+                    Local food trucks and refreshing drinks
+                </li>
+
+                <li>
+                    <strong>DRESS CODE</strong> —
+                    Casual and comfortable
+                </li>
+            </ul>
+
+            <p>
+                <em>Music, lights, food, and fun for everyone!</em>
+            </p>
+
+        </div>
+
+
+        <!-- Tonight's Program -->
+        <div class="section program">
+
+            <h2>Tonight's Program</h2>
+
+            <p>
+                <strong>7:30 PM</strong> — Doors Open
+            </p>
+
+            <p>
+                <strong>8:00 PM</strong> — Opening Performance
+            </p>
+
+            <p>
+                <strong>9:00 PM</strong> — Main Live Band
+            </p>
+
+            <p>
+                <strong>10:15 PM</strong> — Starlight DJ Set
+            </p>
+
+            <p>
+                <strong>10:50 PM</strong> — Final Song
+            </p>
+
+            <p>
+                <strong>Updated Start Time:</strong>
+                <del>7:00 PM</del>
+                <ins>7:30 PM</ins>
+            </p>
+
+        </div>
+
+
+        <!-- Tickets -->
+        <div class="section tickets">
+
+            <h2>Tickets</h2>
+
+            <p>
+                <strong>Original Price:</strong>
+                <del>$1,200</del>
+            </p>
+
+            <p>
+                <strong>Special Price:</strong>
+                <ins>$800</ins>
+            </p>
+
+            <p>
+                Your ticket includes:
+                <br>
+                Live music + festival access + welcome drink
+            </p>
+
+            <p>
+                <a href="https://www.opentix.life/" target="_blank">
+                    Reserve Your Ticket
+                </a>
+            </p>
+
+        </div>
+
     </div>
 
-    <h2 class="section-title">Contact</h2>
 
-    <div class="contact">
-      Jazz Night Taipei<br>
-      123 Music Street, Taipei<br>
-      <a href="mailto:jazznight@example.com">
-        jazznight@example.com
-      </a>
-    </div>
+    <!-- Contact Us -->
+    <footer>
 
-  </main>
+        <h2>Contact Us</h2>
 
-  <script>
-    const links = document.querySelectorAll(".links a");
+        <address>
+            Starlight Music Festival<br>
+            Taipei Riverside Park<br>
+            Taipei, Taiwan<br>
+            Email:
+            <a href="mailto:hello@starlightfestival.com">
+                hello@starlightfestival.com
+            </a>
+            <br>
+            Tel:
+            <a href="tel:+886212345678">
+                +886-2-1234-5678
+            </a>
+        </address>
 
-    links.forEach(link => {
-      let longPressTimer;
-
-      // 刚按下 → :active 自动变成红色
-      link.addEventListener("mousedown", () => {
-        longPressTimer = setTimeout(() => {
-          // 长按 500ms 后 → 紫色
-          link.classList.add("long-press");
-        }, 500);
-      });
-
-      // 松开 → 恢复正常状态
-      link.addEventListener("mouseup", () => {
-        clearTimeout(longPressTimer);
-        link.classList.remove("long-press");
-      });
-
-      link.addEventListener("mouseleave", () => {
-        clearTimeout(longPressTimer);
-        link.classList.remove("long-press");
-      });
-
-      // 手机触摸
-      link.addEventListener("touchstart", () => {
-        longPressTimer = setTimeout(() => {
-          link.classList.add("long-press");
-        }, 500);
-      });
-
-      link.addEventListener("touchend", () => {
-        clearTimeout(longPressTimer);
-        link.classList.remove("long-press");
-      });
-    });
-  </script>
+    </footer>
 
 </body>
+
 </html>
