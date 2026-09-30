@@ -1,339 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Task 3 - Navigation Bar</title>
+  <style>
+    .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #008000;
+    }
 
-    <title>Starlight Music Festival</title>
+    .navbar li a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: white;
+      background-color: #008000;
+      transition: background-color 0.2s ease;
+    }
 
-    <style>
-        /* ---------- General ---------- */
+    .navbar li a:hover {
+      background-color: #005500;
+    }
 
-        body {
-            margin: 0;
-            background-color: #111827;
-            color: #f9fafb;
-            font-family: Georgia, serif;
-        }
-
-        /* ---------- Header ---------- */
-
-        header {
-            background-color: #6d28d9;
-            text-align: center;
-            padding: 25px;
-            margin: 6px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 30px;
-        }
-
-        header p {
-            margin: 8px;
-            font-size: 14px;
-        }
-
-        /* ---------- Event Image ---------- */
-
-        .event-image {
-            text-align: center;
-            margin: 12px auto 18px;
-        }
-
-        .event-image img {
-            width: 480px;
-            max-width: 90%;
-            display: block;
-            margin: auto;
-        }
-
-        .event-image p {
-            font-size: 11px;
-        }
-
-        /* ---------- 2 x 2 Layout ---------- */
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin: 6px;
-        }
-
-        .section {
-            padding: 20px;
-            min-height: 105px;
-            box-sizing: border-box;
-        }
-
-        .about {
-            background-color: #fef3c7;
-            color: #312e81;
-        }
-
-        .highlights {
-            background-color: #374151;
-            color: #ffffff;
-        }
-
-        .program {
-            background-color: #fde68a;
-            color: #312e81;
-        }
-
-        .tickets {
-            background-color: #1f2937;
-            color: #ffffff;
-        }
-
-        .section h2 {
-            font-size: 18px;
-            margin-top: 0;
-        }
-
-        .section p {
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        .section ul {
-            font-size: 12px;
-            line-height: 1.7;
-        }
-
-        /* ---------- Links ---------- */
-
-        a:link {
-            color: #c4b5fd;
-        }
-
-        a:visited {
-            color: #f9a8d4;
-        }
-
-        a:hover {
-            color: #facc15;
-        }
-
-        a:active {
-            color: #ef4444;
-        }
-
-        /* ---------- Contact ---------- */
-
-        footer {
-            background-color: #6d28d9;
-            text-align: center;
-            padding: 18px;
-            margin: 0 6px 6px;
-        }
-
-        footer h2 {
-            margin: 0 0 10px;
-            font-size: 18px;
-        }
-
-        footer p {
-            font-size: 12px;
-            line-height: 1.6;
-        }
-
-        address {
-            font-style: normal;
-        }
-
-        /* ---------- Mobile ---------- */
-
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
+    .navbar li a:active {
+      background-color: #1a1a1a;
+    }
+  </style>
 </head>
-
-
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>STARLIGHT MUSIC FESTIVAL</h1>
-
-        <p>
-            <em>An Evening of Music, Lights &amp; Memories</em>
-        </p>
-
-        <p>
-            <strong>Saturday, October 17, 2026</strong>
-            <br>
-            7:30 PM – 11:00 PM
-            <br>
-            Taipei Riverside Park
-        </p>
-    </header>
-
-
-    <!-- Large Event Image -->
-    <div class="event-image">
-
-        <a href="https://www.taipei.gov.tw/" target="_blank">
-            <img
-                src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a"
-                alt="Live music festival at night">
-        </a>
-
-        <p>
-            <em>Click the image to visit the event website.</em>
-        </p>
-
-    </div>
-
-
-    <!-- 2 x 2 Layout -->
-    <div class="grid">
-
-        <!-- About the Night -->
-        <div class="section about">
-
-            <h2>About the Night</h2>
-
-            <p>
-                Welcome to <strong>Starlight Music Festival</strong>,
-                an exciting outdoor music event featuring live performances,
-                colorful lights, and an unforgettable atmosphere.
-            </p>
-
-            <p>
-                Enjoy great music, meet new people, and spend the evening
-                dancing under the stars.
-            </p>
-
-        </div>
-
-
-        <!-- Night Highlights -->
-        <div class="section highlights">
-
-            <h2>Night Highlights</h2>
-
-            <ul>
-                <li>
-                    <strong>LIVE BAND</strong> —
-                    Starlight Avenue
-                </li>
-
-                <li>
-                    <strong>FOOD &amp; DRINKS</strong> —
-                    Local food trucks and refreshing drinks
-                </li>
-
-                <li>
-                    <strong>DRESS CODE</strong> —
-                    Casual and comfortable
-                </li>
-            </ul>
-
-            <p>
-                <em>Music, lights, food, and fun for everyone!</em>
-            </p>
-
-        </div>
-
-
-        <!-- Tonight's Program -->
-        <div class="section program">
-
-            <h2>Tonight's Program</h2>
-
-            <p>
-                <strong>7:30 PM</strong> — Doors Open
-            </p>
-
-            <p>
-                <strong>8:00 PM</strong> — Opening Performance
-            </p>
-
-            <p>
-                <strong>9:00 PM</strong> — Main Live Band
-            </p>
-
-            <p>
-                <strong>10:15 PM</strong> — Starlight DJ Set
-            </p>
-
-            <p>
-                <strong>10:50 PM</strong> — Final Song
-            </p>
-
-            <p>
-                <strong>Updated Start Time:</strong>
-                <del>7:00 PM</del>
-                <ins>7:30 PM</ins>
-            </p>
-
-        </div>
-
-
-        <!-- Tickets -->
-        <div class="section tickets">
-
-            <h2>Tickets</h2>
-
-            <p>
-                <strong>Original Price:</strong>
-                <del>$1,200</del>
-            </p>
-
-            <p>
-                <strong>Special Price:</strong>
-                <ins>$800</ins>
-            </p>
-
-            <p>
-                Your ticket includes:
-                <br>
-                Live music + festival access + welcome drink
-            </p>
-
-            <p>
-                <a href="https://www.opentix.life/" target="_blank">
-                    Reserve Your Ticket
-                </a>
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- Contact Us -->
-    <footer>
-
-        <h2>Contact Us</h2>
-
-        <address>
-            Starlight Music Festival<br>
-            Taipei Riverside Park<br>
-            Taipei, Taiwan<br>
-            Email:
-            <a href="mailto:hello@starlightfestival.com">
-                hello@starlightfestival.com
-            </a>
-            <br>
-            Tel:
-            <a href="tel:+886212345678">
-                +886-2-1234-5678
-            </a>
-        </address>
-
-    </footer>
+  <ul class="navbar">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
 
 </body>
-
 </html>
